@@ -38,7 +38,7 @@ public class Enemy {
     public void attack(Hero hero){
         if(dead!=true){
             int damage = (int)(Math.random() * attack);
-            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName, damage);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.getName(), damage);
             hero.wounded(damage);
         }else{
         System.out.println("死亡しているため攻撃不可");
