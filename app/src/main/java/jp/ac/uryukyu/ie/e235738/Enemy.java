@@ -1,5 +1,7 @@
 package jp.ac.uryukyu.ie.e235738;
 
+import org.checkerframework.common.value.qual.StringVal;
+
 /**
  * 敵クラス。
  *  String name; //敵の名前
@@ -34,12 +36,13 @@ public class Enemy {
      * @param hero 攻撃対象
      */
     public void attack(Hero hero){
-        if(dead = true){
-            System.out.println("死亡");
+        if(dead!=true){
+            int damage = (int)(Math.random() * attack);
+            System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
+            hero.wounded(damage);
         }else{
-        int damage = (int)(Math.random() * attack);
-        System.out.printf("%sの攻撃！%sに%dのダメージを与えた！！\n", name, hero.name, damage);
-        hero.wounded(damage);}
+        System.out.println("死亡しているため攻撃不可");
+        }
     }
 
     /**
@@ -54,5 +57,40 @@ public class Enemy {
             System.out.printf("モンスター%sは倒れた。\n", name);
         }
     }
+    // 以下は各フィールドのgetterおよびsetterメソッドです。
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getHitpoint(){
+        return this.hitPoint;
+    }
+
+    public int getattack(){
+        return this.attack;
+    }
+
+    public boolean getDead(){
+        return this.dead;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setHitpoint(int hitPoint){
+        this.hitPoint = hitPoint;
+    }
+
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
+    public void setDead(boolean dead){
+        this.dead = dead;
+    }
+
+
 
 }

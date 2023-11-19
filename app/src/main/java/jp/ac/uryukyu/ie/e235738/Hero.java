@@ -47,8 +47,43 @@ public class Hero {
     public void wounded(int damage){
         hitPoint -= damage;
         if( hitPoint < 0 ) {
-            dead = true;
+            dead= true;
             System.out.printf("勇者%sは道半ばで力尽きてしまった。\n", name);
         }
     }
+    // 以下は各フィールドのgetterおよびsetterメソッドです。
+
+    public String getName(){
+        return this.name;
+    }
+
+    public int getHitpoint(){
+        return this.hitPoint;
+    }
+
+    public int getAttack(){
+        return this.attack;
+    }
+
+    public boolean getDead(){
+        return this.dead;
+    }
+
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public void setHitpoint(int hitPoint){
+        this.hitPoint = hitPoint;
+    }
+
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
+    public void setDead(boolean dead){
+        this.dead = dead;
+    }
+
+
 }
