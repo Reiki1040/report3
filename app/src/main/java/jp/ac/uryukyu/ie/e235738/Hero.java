@@ -23,7 +23,7 @@ package jp.ac.uryukyu.ie.e235738;
     public Hero (String name, int maximumHP, int attack) {
         super(name, maximumHP, attack);
         this.name = name;
-        hitPoint = maximumHP;
+        this.hitPoint = maximumHP;
         this.attack = attack;
         dead = false;
         System.out.printf("%sのHPは%d。攻撃力は%dです。\n", name, maximumHP, attack);

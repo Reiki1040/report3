@@ -32,7 +32,7 @@ public class LivingThing {
         System.out.println(getName() + "の攻撃！" + opponent.name +  'に' + damage + "のダメージを与えた！！") ;
         opponent.wounded(damage);
     }else{
-        System.out.println("死亡しているため、攻撃不可");
+        System.out.println(name + "は死亡しているため、攻撃不可");
     }
 
     }
